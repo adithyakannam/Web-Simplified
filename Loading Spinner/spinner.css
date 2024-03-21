@@ -1,0 +1,95 @@
+* , *::after , *::before {
+  box-sizing: border-box;
+}
+
+h4 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.spinner {
+  width: 300px;
+  height:300px;
+  margin: 100px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 2em;
+  animation: load 2s ease-in-out infinite alternate; ;
+}
+
+.spinner-sector {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  mix-blend-mode: overlay;
+  animation: spin var(--duration) var(--timing) infinite;
+}
+
+.spinner-sector-red {
+    --duration:3s;
+    --timing:linear;
+  border-top-color: lightcoral;
+}
+
+.spinner-sector-blue {
+    --duration: 2.5s;
+    --timing:ease-in-out;
+    border-left-color: lightblue;
+}
+
+.spinner-sector-green {
+    --duration: 2s;
+    --timing:ease-in;
+    border-right-color: lightgreen;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+  0% {
+   color: rgba(0, 0, 0, .9);
+  }
+  50% {
+    color: rgba(0, 0, 0, .5);
+  }
+  100% {
+    color: rgba(0, 0, 0, .2);
+  }
+}
+
+.spinner-2::before , 
+.spinner-2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  mix-blend-mode: overlay;
+  animation: spin var(--duration) var(--timing) infinite;
+}
+
+.spinner-2::before {
+    --duration: 2s;
+    --timing:ease-in-out;
+    border-left-color: lightblue;
+}
+
+.spinner-2::after {
+    --duration: 1.5s;
+    --timing:ease-in;
+    border-right-color: lightgreen;
+}
