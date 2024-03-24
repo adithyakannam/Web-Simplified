@@ -1,0 +1,234 @@
+* , *::after, *::before {
+    box-sizing: border-box;
+    font-family: "Roboto",Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;   
+}
+
+.videos {
+    background-color: #f9f9f9;
+}
+
+.video-section {
+    display: grid;
+    padding: 3rem 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3em 1em;
+    
+    border-top: 4px solid #ccc;
+}
+
+.video-section:first-child {
+    border-top: none;
+}
+
+.video-conatiner {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail {
+    position: relative;
+    display: flex;
+}
+
+.thumbnail::before {
+    content: attr(data-duration);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    right: 5px;
+    bottom: 5px;
+    padding: .2em .4em;
+    border-radius: .3em;
+    font-size: .9em;
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    min-width: 337px;
+    min-height: 190px;
+    border-radius: .6em;
+    background-color: #aaa;
+}
+
+.video-bottom-section {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.channel-icon {
+    margin-right: .75rem;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background-color: #aaa;
+}
+
+.video-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: inherit;
+    margin-bottom: .4rem;
+    text-decoration: none;
+    color: black;
+}
+
+.video-channel-name {
+    color: #686767;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: .2rem;
+    font-family: inherit;    
+    transition: color 150ms;
+}
+
+.video-channel-name:hover {
+    color: #111;
+}
+
+.video-metadata {
+    color: #555;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+ .video-section-title {
+    font-family: inherit;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -.5rem 0;
+    padding: 0 .5rem;
+}
+
+.video-section-title-close {
+    font-size: 2rem;
+    cursor: pointer;
+    border: 0;
+    background: none;
+    padding: 0;
+    color: #555;
+}
+
+.categories {
+    padding: 1rem 2rem;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+
+}
+
+.category-section {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+.category {
+    flex-grow: 2;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border-radius: 999px ;
+    padding: .5rem .5rem;
+    text-wrap: nowrap;
+    cursor: pointer;
+    margin-right: 1rem;
+    border: 1px solid #ccc;
+    background-color: #e7e7e7;
+    transition: background-color 150ms;
+}
+
+.category:hover {
+    background-color: #a9a8a8;
+}
+
+.category.active {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #e7e7e7;
+}
+
+.category:last-child {
+   margin-right: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.youtube-logo {
+    height: 20px;
+    margin: 1rem 0.5rem;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 750px;
+}
+
+.search-form .search-bar {
+    display: flex;
+    flex-grow: 1;
+    height: 36px;
+    margin: 0 3rem;
+    flex-basis:250px;
+}
+
+.search-form .search-input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding:  .5rem ;
+    border-radius:900px 0 0 900px;
+    margin-right: 0 ;
+}
+
+.search-form .search-btn {
+    margin-left: 0;
+    border-left: none;
+    padding: 0 1.25rem;
+    border-radius: 0 900px 900px 0;
+    background-color: #f8f8f8;
+    border: 1px solid #777;
+    cursor: pointer;
+}
+
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icon {
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-channel-icon {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #aaa;
+    border: 1px solid #a9a8a8;
+}
